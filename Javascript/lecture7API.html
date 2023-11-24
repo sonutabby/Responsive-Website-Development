@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<link rel="stylesheet" href="API.css">-->
+</head>
+
+<style>
+    .square {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        left: 0;
+        background-color: blueviolet;
+    }
+</style>
+
+<body>
+    
+    <div class = "square">
+        <input class="count" value="0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" 
+    integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="index.js"></script>
+
+    <script>
+        anime ({
+            targets:'.square',
+            left: 300
+        })
+
+        /*anime ({
+            targets:'.square',
+            translateX:'+=300',
+            translateY:'+=300',
+        })*/
+
+        anime ({
+            targets:'.square',
+            translateX:anime.random(100,500),
+            translateY: anime.random(100,300),
+        })
+
+        anime ({
+            targets: '.count',
+            value:100,
+            round: 1,
+            easing:'Linear',
+        })
+
+        const sqstats=document.querySelector('.square')
+        const sqdistance={
+            distance:0,
+        }
+
+        anime ({
+        targets: sqdistance,
+        distance: 300,
+        update: function(){
+            sqstats.innerHTML=JSON.stringify(sqdistance)
+        }
+        })
+    </script>
+</body>
+</html>

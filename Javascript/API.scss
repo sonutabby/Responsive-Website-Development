@@ -1,0 +1,8 @@
+
+@mixin theme ($t:yellow){
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 0;
+    background-color: blueviolet;
+}

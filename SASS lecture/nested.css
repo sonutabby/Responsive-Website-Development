@@ -1,0 +1,21 @@
+.cont ul li {
+  background-color: pink;
+  color: blue;
+}
+
+/*@use "othersection";*/
+.c1 {
+  background-color: yellow;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  border: 1px;
+}
+
+.c2 {
+  background-color: purple;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  border: 1px;
+}/*# sourceMappingURL=nested.css.map */

@@ -8,26 +8,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
-    <div class="top-nav">
-        <img src="Valorant-Logo-PNG-Pic.png" alt="logo" width="250" height="auto">
-        <a class="active" href="#NEWS">NEWS</a>
+    <div class="top-nav"> <!--Making an top nav to the website-->
+        <img src="Valorant-Logo-PNG-Pic.png" alt="logo" width="250" height="auto"> <!--Puting a Brand/Logo-->
+        <a class="active" href="#NEWS">NEWS</a> <!--Adding an a href class to the navigation so if the user click any one of these it will direct them to the specific spot of the page-->
         <a href="#ABOUT">ABOUT</a>
-        <a href="#GUIDES">GUIDES</a>
+        <a href="#HOME">HOME</a>
         <a href="#E-SPORTS">E-SPORTS</a>
         <a href="#SOCIAL">SOCIAL MEDIA</a>
     </div>
 
-    <div class="main">
-        <img src="valorant-sova-omen-cypher-reckoning-4k-wallpaper-uhdpaper.com-641@1@n.jpg" alt="mainpic">
+    <div class="main" id="HOME">
+        <img src="valorant-sova-omen-cypher-reckoning-4k-wallpaper-uhdpaper.com-641@1@n.jpg" alt="mainpic"> <!--Adding a main image for the website to add some design and make it more appealing to the users-->
         <div class="content">
             <img src="1664302589valorant-logo-png-white.png" alt="main">
         </div>
-        <div class="playnow">
+        <div class="playnow"> <!--A play now button where once clicked it will direct them on downloading the game-->
             <a href="https://authenticate.riotgames.com/?client_id=prod-xsso-playvalorant&code_challenge=c3Sb9-WgZjZtYTshLUPmbY9ndEjya3lugCHvvyNQxsM&method=riot_identity&platform=web&redirect_uri=https%3A%2F%2Fauth.riotgames.com%2Fauthorize%3Fclient_id%3Dprod-xsso-playvalorant%26code_challenge%3Dc3Sb9-WgZjZtYTshLUPmbY9ndEjya3lugCHvvyNQxsM%26code_challenge_method%3DS256%26redirect_uri%3Dhttps%253A%252F%252Fxsso.playvalorant.com%252Fredirect%26response_type%3Dcode%26scope%3Dopenid%2520account%2520email%26state%3D85ccfcd89a28554b4b3fe9626c%26uri%3Dhttps%253A%252F%252Fplayvalorant.com%252Far-ae%252F&security_profile=low">PLAY NOW</a>
         </div>
     </div>
 
-    <div class="about">
+    <div class="about" id="ABOUT"> <!--This is where the website gives insights or information about the game-->
         <div class="item1">
             <img src="agents-group-31d7ce5a3637e45d8b25d2fd03159e6c.png" alt="agents">
         </div>
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <div class="esport">
+    <div class="esport" id="E-SPORTS"> <!--esports rules and conditions-->
         <div class="esprts">
             <h1>E-SPORTS</h1>
             <h2>OVERVIEW</h2>
@@ -53,14 +53,14 @@
             <li>The Tournament is a three (3) day, Valorant tournament. The tournament will consist of a 128 team bracket and will be played on PC.</li>
         </div>
 
-        <div class="i1">
+        <div class="i1"> <!--Just adding an additional image to the website-->
             <img src="ddyjdmr-b48faa53-4620-4de8-a2f9-77f168cc1ea6.png" alt="reyna">
             <img src="V_AGENTS_587x900_sage.png" alt="sage">
         </div>
     </div>
 
-    <div class="news">
-        <h1>NEWS</h1>
+    <div class="news"> <!--some news to let the users keep updated about the game-->
+        <h1 id="NEWS">NEWS</h1>
     <div class="flex-container">
         <div class="itm1">
             <div class="image-container">
@@ -94,8 +94,8 @@
     </div>
     </div>
 
-    <div class="socials">
-        <h1>SOCIALS</h1>
+    <div class="socials"><!--Adding the riots social medias using a href tag-->
+        <h1 id="SOCIAL">SOCIALS</h1>
         <div class="soc1">
         <a href="https://www.facebook.com/RiotGames/">Official Facebook Account</a>
     </div>
@@ -109,7 +109,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const headings = document.querySelectorAll('h1:not(.socials h1), p:not(.flex-container p)');
+            const headings = document.querySelectorAll('h1:not(.socials h1), p:not(.flex-container p)'); // Adding the animation to the website, once the text is hovered it will have an animation
 
             headings.forEach(heading => {
                 heading.addEventListener('mouseover', function () {
@@ -132,6 +132,29 @@
             });
         });
     </script>
+
+    <script>
+        // A script to make the scroll transition smooth
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll('.top-nav a');
+    
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - document.querySelector('.top-nav').offsetHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    
     
 </body>
 </html>

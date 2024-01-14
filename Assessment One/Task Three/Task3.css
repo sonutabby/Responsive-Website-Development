@@ -1,4 +1,6 @@
-/* These are the circle width & height and line color */
+/*These variables store color codes, likely used for styling lines, backgrounds, or various elements throughout the website.*/
+/*These define sizes (width and height) of circles, potentially used for visual elements like icons, buttons, or decorative elements.*/
+/* Defines a color used for hover effects, which might change the color of elements when users hover over them with the mouse.*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,11 +11,9 @@
   background-color: #dadfe4;
 }
 
-/*.header {
-    background-color: $header-footer-clr;
-    display: flex;
-    justify-content: center;
-}*/
+/*class includes the centerElement mixin. This class would be applied to an HTML element (like a div)
+and would center its content both horizontally and vertically within the specified width and height.
+This mixin saves repetitive code and simplifies the process of centering elements using Flexbox properties.*/
 footer {
   width: 100%;
   height: 50px;
@@ -48,8 +48,8 @@ footer {
 
 .circles {
   display: flex;
-  justify-content: center; /* Aligns circles equally horizontally */
-  align-items: center; /* Centers vertically */
+  justify-content: center; /*aligns circles equally horizontally*/
+  align-items: center; /*centers vertically*/
   margin-top: 3%;
   margin-bottom: 30px;
   gap: 6px;
@@ -59,56 +59,63 @@ footer {
   width: 70px;
   height: 70px;
   -webkit-clip-path: circle(50% at center);
-          clip-path: circle(50% at center); /* Create a circle shape */
+          clip-path: circle(50% at center); /*create a circle shape */
 }
 
 .c2 {
   width: 80px;
   height: 80px;
   -webkit-clip-path: circle(50% at center);
-          clip-path: circle(50% at center); /* Create a circle shape */
+          clip-path: circle(50% at center);
 }
 
 .c3 {
   width: 90px;
   height: 90px;
   -webkit-clip-path: circle(50% at center);
-          clip-path: circle(50% at center); /* Create a circle shape */
+          clip-path: circle(50% at center);
 }
 
 .c4 {
   width: 100px;
   height: 100px;
   -webkit-clip-path: circle(50% at center);
-          clip-path: circle(50% at center); /* Create a circle shape */
+          clip-path: circle(50% at center);
 }
 
+/*A set of guidelines to be followed while lingering over items with particular classes is defined in this block.
+focuses on items that have the designated classes when they are hovering. When hovered, changes the text color to the value
+kept in the $hover-color variable.*/
 .s1:hover, .s2:hover, .s3:hover, .s4:hover,
 .c1:hover, .c2:hover, .c3:hover, .c4:hover {
   color: #444;
   background-color: #444;
 }
 
+/*When included within a class or selector using @include, the image-size mixin is intended to make it simple to set the background
+image and dimensions of an element by giving parameters for the image URL, width, and height.*/
+/* Media queries for Desktop */
+/*Elements with the.img1 class have their background image and dimensions set using the mixin image-size.
+It establishes the element's width and height to 400 pixels apiece and provides the URL of the background image ("400x400.png").*/
 @media (min-width: 801px) {
   .img1 {
     background-image: url("400x400.png");
     width: 400px;
     height: 400px;
-    /* Media queries for Desktop */
   }
   .images {
-    background-color: #8ccff7;
+    background-color: #8ccff7; /*Sets the background color of elements with the .images class to a shade of blue (#8ccff7).*/
     display: flex;
     justify-content: center;
     align-items: center;
   }
 }
+/* Media queries for tablet */
 @media (max-width: 800px) and (min-width: 768px) {
   .img2 {
     background-image: url("300x300.png");
     width: 300px;
     height: 300px;
-    /* Media queries for tablet */
   }
   .images {
     background-color: #8ccff7;
@@ -120,12 +127,12 @@ footer {
     flex-direction: column;
   }
 }
+/* Media queries for phone */
 @media (max-width: 767px) {
   .img3 {
     background-image: url("200x200.png");
     width: 200px;
     height: 200px;
-    /* Media queries for phone */
   }
   .images {
     background-color: #8ccff7;
